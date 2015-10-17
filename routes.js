@@ -12,8 +12,3 @@ export default (
             component={DigestPage}/>
     </Route>
 );
-
-// <Route path="/:login/:name"
-//     component={RepoPage} />
-// <Route path="/:login"
-//     component={UserPage} />

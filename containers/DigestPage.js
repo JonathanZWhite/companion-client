@@ -1,11 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { fetchDigest } from '../actions';
 
 function loadData(props) {
-    // const { login } = props;
-    // call to actions
-    // props.loadUser(login, ['name']);
-    // props.loadStarred(login);
+    props.fetchDigest();
 }
 
 class DigestPage extends Component {
@@ -32,4 +30,6 @@ function mapStateToProps(state) {
     return {};
 }
 
-export default connect(mapStateToProps, {})(DigestPage);
+export default connect(mapStateToProps, {
+    fetchDigest
+})(DigestPage);
