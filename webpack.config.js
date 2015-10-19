@@ -1,6 +1,10 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var definePlugin = new webpack.DefinePlugin({
+    __CONFIG__: JSON.stringify(require('./config'))
+});
+
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: [
@@ -15,7 +19,8 @@ module.exports = {
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin(),
+        definePlugin
     ],
     module: {
         loaders: [{

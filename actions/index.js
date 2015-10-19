@@ -4,7 +4,7 @@ import * as ActionTypes from '../constants/ActionTypes';
 export function fetchDigest() {
     return dispatch => {
         request
-            .get('http://localhost:3000/api/digest/feed')
+            .get(__CONFIG__.hosts.api + 'digest/feed')
             .end((err, resp) => {
                 dispatch(receiveDigest(resp.body[0].articles));
             });
@@ -17,28 +17,6 @@ export function receiveDigest(data) {
         data: data
     }
 }
-
-// console.log('schooId', json);
-// return {
-//     type: types.RECEIVE_SCHOOL,
-//     schoolId: schoolId,
-//     data: json
-// };
-
-
-// export function fetchBraintreeToken() {
-//     return dispatch => {
-//         request
-//             .get(__CONFIG__.api.proxy)
-//             .query({
-//                 endpoint: 'braintree/client-token'
-//             })
-//             .end(function(err, resp) {
-//                 dispatch(receiveBraintreeToken(resp.body))
-//             });
-//     };
-// }
-
 
 import { CALL_API, Schemas } from '../middleware/api';
 
