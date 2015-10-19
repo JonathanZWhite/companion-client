@@ -7,6 +7,9 @@ import { combineReducers } from 'redux';
 const initialState = {
     digest: {
         articles: []
+    },
+    notes: {
+        notes: []
     }
 };
 
@@ -15,6 +18,18 @@ export default function digest(state = initialState.digest, action) {
         case ActionTypes.RECEIVE_DIGEST:
             return Object.assign({}, state, {
                 articles: action.data
+            });
+        default:
+            return state;
+    }
+}
+
+export default function notes(state = initialState.notes, action) {
+    switch (action.type) {
+        case ActionTypes.RECEIVE_NOTES:
+            console.log('asdgljasdglkjasdklgjasd', action.data);
+            return Object.assign({}, state, {
+                notes: action.data
             });
         default:
             return state;
@@ -65,7 +80,8 @@ const pagination = combineReducers({
 
 const rootReducer = combineReducers({
     digest,
-    router
+    router,
+    notes
 });
 
 export default rootReducer;

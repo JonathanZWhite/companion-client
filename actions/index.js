@@ -18,6 +18,23 @@ export function receiveDigest(data) {
     }
 }
 
+export function fetchNotes() {
+    return dispatch => {
+        request
+            .get(__CONFIG__.hosts.api + 'notes')
+            .end((err, resp) => {
+                dispatch(receiveNotes(resp.body));
+            });
+    }
+}
+
+export function receiveNotes(data) {
+    return {
+        type: ActionTypes.RECEIVE_NOTES,
+        data: data
+    }
+}
+
 import { CALL_API, Schemas } from '../middleware/api';
 
 export const USER_REQUEST = 'USER_REQUEST';

@@ -17,12 +17,7 @@ app.use(function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
-console.log('LOOK', process.env.NODE_ENV);
-
 app.listen(config.port, function(error) {
-    if (error) {
-        console.error(error);
-    } else {
-        console.info("==> 🌎  Listening on port %s.", config.port);
-    }
+    if (error) console.error(error);
+    else console.info("==> 🌎  Listening on port %s.", config.port);
 });
