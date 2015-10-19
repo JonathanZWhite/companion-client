@@ -1,14 +1,29 @@
 import request from 'superagent';
+import * as ActionTypes from '../constants/ActionTypes';
 
 export function fetchDigest() {
     return dispatch => {
         request
             .get('http://localhost:3000/api/digest/feed')
             .end((err, resp) => {
-                console.log('look here', err, resp);
+                dispatch(receiveDigest(resp.body[0].articles));
             });
     }
 }
+
+export function receiveDigest(data) {
+    return {
+        type: ActionTypes.RECEIVE_DIGEST,
+        data: data
+    }
+}
+
+// console.log('schooId', json);
+// return {
+//     type: types.RECEIVE_SCHOOL,
+//     schoolId: schoolId,
+//     data: json
+// };
 
 
 // export function fetchBraintreeToken() {

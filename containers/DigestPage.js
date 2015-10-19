@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { fetchDigest } from '../actions';
+import Digest from '../components/digest/Digest';
+import '../assets/sass/components/digest.scss';
 
 function loadData(props) {
     props.fetchDigest();
@@ -16,9 +18,10 @@ class DigestPage extends Component {
     }
 
     render() {
+        const { articles } = this.props;
         return (
             <div>
-                Hello World
+                <Digest articles={articles}/>
             </div>
         );
     }
@@ -27,7 +30,10 @@ class DigestPage extends Component {
 DigestPage.propTypes = {};
 
 function mapStateToProps(state) {
-    return {};
+    const { articles } = state.digest;
+    return {
+        articles
+    };
 }
 
 export default connect(mapStateToProps, {

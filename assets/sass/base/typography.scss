@@ -1,0 +1,33 @@
+@import '~modularscale-sass/stylesheets/modular-scale';
+
+// font-families
+$sans-serif: 'Lato', sans-serif;
+
+// weights
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 700;
+
+$caption: 14px;
+$p: 18px;
+$h1: 46px;
+$h2: 40px;
+$h3: 28px;
+$h4: 24px;
+
+
+.txt--h1 { font-size: $h1; }
+.txt---h2 { font-size: $h2; }
+.txt--h3 { font-size: $h3; }
+.txt--h4 { font-size: $h4; }
+.txt--p { font-size: $p; }
+.txt--caption { font-size: $caption; }
+
+.txt--p.txt-after--h3 { margin-top: $space-smaller; }
+.txt--caption { color: $txt-secondary; }
+
+h1, h2, h3, h4 {
+    color: $header-primary;
+    font-weight: $bold;
+}

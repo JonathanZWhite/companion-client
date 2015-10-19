@@ -35,11 +35,15 @@
     "babel-plugin-react-transform": "^1.1.0",
     "bluebird": "^2.10.2",
     "concurrently": "^0.1.1",
+    "css-loader": "^0.20.1",
     "express": "^4.13.3",
+    "node-sass": "^3.3.3",
     "react-transform-hmr": "^1.0.0",
     "redux-devtools": "^2.1.5",
+    "sass-loader": "^3.0.0",
+    "style-loader": "^0.12.4",
     "superagent": "^1.4.0",
-    "webpack": "^1.9.11",
+    "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.2.0"
   }

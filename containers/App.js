@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { pushState } from 'redux-router';
-import Explore from '../components/Explore';
+import '../assets/sass/base/base.scss';
 
 class App extends Component {
     constructor(props) {

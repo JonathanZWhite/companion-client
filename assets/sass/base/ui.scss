@@ -1,0 +1,24 @@
+body {
+    font-size: $p;
+    font-family: $sans-serif;
+    font-weight: $normal;
+    color: $txt-primary;
+    -webkit-text-size-adjust: 100%;  //fix for iOS
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+.block {
+    line-height: 1.7;
+}
+
+.block--item {
+    padding: $space-small 0;
+}
+
+.block--preview {
+    padding: $space-medium 0 $space-large;
+}
